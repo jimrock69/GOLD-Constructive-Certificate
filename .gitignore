@@ -1,0 +1,27 @@
+# --- Lean 4 / Lake ---
+# Ignore the local build directory and external packages
+.lake/
+lake-packages/
+build/
+
+# --- LaTeX / Auxiliary Files ---
+# Ignore temporary files generated during PDF compilation
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+*.pdf
+
+# --- System / OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Backup Files ---
+*~
+*.bak
+*.swp
