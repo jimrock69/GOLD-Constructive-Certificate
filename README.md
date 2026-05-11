@@ -30,7 +30,7 @@ The certificate serves as a functional witness to the following results:
 
 | File / Folder | Purpose |
 | :--- | :--- |
-| **`RH_Proof/`** | **Primary Manuscript.** Includes `RH_Proof.pdf`, `.tex`, bibliography, and figures. |
+| **`RH_Proof/`** | **Primary Manuscript.** Includes `RH_Proof.tex`, bibliography, and figures. |
 | **`RH_Proof_Guide/`** | **Technical Guide.** Source and PDF for the manuscript guide. |
 | **`verification_code_instructions/`** | **Verification Hub.** Contains `Verification.pdf` and `Lean_Logic_Guide.pdf`. |
 | **`.../verification_code/`** | **The Engine Room.** Lean 4 project files (`sieve.lean`, `lakefile.lean`, etc.). |
