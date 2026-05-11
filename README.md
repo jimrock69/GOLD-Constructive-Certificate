@@ -5,7 +5,7 @@
 
 This repository provides a machine-certified proof object developed in the **Lean 4** theorem prover. The certificate provides a "vertical verification" of the arithmetic foundations and the 13-manifold stability results presented in the manuscript, *"Recursive Rounding: A Constructive Proof of the Riemann Hypothesis"*.
 
-To verify the Symmetric Sieve Correlation (SSC) logic, navigate to the verifications_instructions folder and follow the steps in the README located there.
+To verify the Symmetric Sieve Correlation (SSC) logic, navigate to the verifications_instructions folder and follow the steps in the README file located there.
 
 
 **PRIMARY DOCUMENTATION**
