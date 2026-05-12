@@ -8,7 +8,7 @@
 \usepackage{microtype}
 \usepackage{listings}
 \usepackage{xcolor}
-
+\usepackage{hyperref}
 % Define Lean 4 Syntax
 \lstdefinelanguage{Lean4}{
     morekeywords={def, match, with, if, then, else, theorem, by, unfold, native_decide, Prop, Nat, axiom},
@@ -1586,8 +1586,12 @@ plt.show()
 \item \textit{Ethics approval:} Not applicable. This study does not involve human participants or animals.
 \item \textit{Consent to participate:} Not applicable.
 \item \textit{Consent for publication:} Not applicable.
-\item \textbf{Code availability:} This paper and the Lean 4 formalization and machine-certified proof objects for this research are publicly available at: \url{https://github.com/jimrock69/RH-Constructive-Certificate}. The repository includes the complete 13-manifold verification suite and the Symmetric Sieve Correlation (SSC) implementation.the \texttt{lean-toolchain} for environment synchronization, and a comprehensive guide for navigating the formal logic. 
-\item \textit{Code availability:} The Lean 4 source files and auxiliary rounding scripts used to generate the construction are included in the archival repository mentioned above.
+\item \textbf{Code availability:} This paper and
+the Lean 4 verification objects and mathematical manuscripts supporting 
+this research are publicly available via GitHub at 
+\url{https://github.com/jimrock69/RH-Constructive-Certificate} 
+and are permanently archived at Zenodo: 
+\href{https://doi.org/10.5281/zenodo.20143542}{https://doi.org/10.5281/zenodo.20143542}. The repository includes the complete 13-manifold verification suite and the Symmetric Sieve Correlation (SSC) implementation, the \texttt{lean-toolchain} for environment synchronization, and a comprehensive guide for navigating the formal logic. 
 \item \textit{Authors' contributions:} James E. Rock is the sole author of this work, responsible for the conceptualization, methodology, and derivation of the proof.
 \item \textit{AI Disclosure:} The author acknowledges the use of \cite{gemini} (a Large Language Model by Google) to assist in drafting the manuscript's expository prose and formatting the structural organization of the associated sieve.lean modules. The original conception of the \textit{Exact Sieve} and the development of the \textit{symplectic mapping of the $13$-manifold} are the intellectual contributions of the author, the translation of these core ideas into the rigorous formal mathematics of the paper was a joint effort. The author has critically reviewed all AI-assisted text and code formatting, and assumes full, sole accountability for the accuracy, integrity, and logical validity of this manuscript and its accompanying computational certificate.
 \end{itemize}

@@ -37,7 +37,14 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows.meta}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
-
+\usepackage{xurl}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,       % False: boxed links; True: colored links
+    linkcolor=blue,        % Color of internal links
+    citecolor=blue,        % Color of bibliographic citations
+    urlcolor=blue          % Color of external links (like your GitHub and DOI)
+}
 % This isolates the font state completely before building the hyperlink
 \newcommand{\gterm}[2]{\begingroup\normalfont\scshape\hyperlink{#1}{#2}\endgroup}
 % --- Custom Sidebar Environment ---
@@ -73,8 +80,6 @@
 \maketitle 
 
 \hypersetup{
-    citecolor=black,       % Forces citation links to be black
-    urlcolor=black,        % Forces external web links to be black
     pdfauthor={James E. Rock},
     pdftitle={Guide to the Recursive Rounding Proof},
     bookmarksnumbered=true % Numbers the bookmarks in the PDF sidebar
@@ -93,9 +98,9 @@
 
 \textit{Guidance: This section traces the foundations of the proof. Note: Every term in} \textsc{Small Caps} \textit{is a clickable link to the Glossary in Appendix A, which provides a technical definition and traces its specific utility in the primary Proof.}
 \subsection{Purpose of this Document}
-The primary document ''Recursive Rounding: A Constructive Proof of the Riemann Hypothesis'' is available in a public repository:  
+This document and the primary document ''Recursive Rounding: A Constructive Proof of the Riemann Hypothesis'' is available in a public repository:  
 
-\noindent \href{https://github.com/jimrock69/RH-Constructive-Certificate}{\color{blue}{https://github.com/jimrock69/RH-Constructive-Certificate}}. It establishes the \gterm{sv_bound}{Symplectic-Vaughan Bound} using the formalisms of \gterm{geometry}{Symplectic Geometry} and \gterm{spectral}{Spectral Rigidity}. This guide is intended as an aid to grasping the novel interdisciplinary connections in the primary manuscript. It contains a summary of common objections that might be made along with responses. It should also help non-experts who want a better grasp of the paper's mathematics.  \textit{Formatting Note:} To maintain the narrative flow of this expository guide, formal bibliographic citations have been omitted. All formal references, historical citations, and proofs of cited theorems (e.g., Gromov's Non-Squeezing Theorem, Weyl's Equidistribution Theorem) are fully documented in the bibliography of the primary manuscript.
+\noindent \url{https://github.com/jimrock69/RH-Constructive-Certificate}. It establishes the \gterm{sv_bound}{Symplectic-Vaughan Bound} using the formalisms of \gterm{geometry}{Symplectic Geometry} and \gterm{spectral}{Spectral Rigidity}. This guide is intended as an aid to grasping the novel interdisciplinary connections in the primary manuscript. It contains a summary of common objections that might be made along with responses. It should also help non-experts who want a better grasp of the paper's mathematics.  \textit{Formatting Note:} To maintain the narrative flow of this expository guide, formal bibliographic citations have been omitted. All formal references, historical citations, and proofs of cited theorems (e.g., Gromov's Non-Squeezing Theorem, Weyl's Equidistribution Theorem) are fully documented in the bibliography of the primary manuscript.
 
 \subsection{The Core Problem: The Staircase vs. The Curve}
 At its heart, the \gterm{rh}{Riemann Hypothesis} is a problem about measurement error.
