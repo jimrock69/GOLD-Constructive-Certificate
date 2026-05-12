@@ -5,6 +5,8 @@ This repository provides a machine-certified proof object developed in the **Lea
 For formal verification of the **Symmetric Sieve Correlation (SSC)** framework and the **Riemann Hypothesis (RH)** within a 13-dimensional symplectic manifold follow the 
 verification instructions here in README.md and in readme_instructions.txt.
 
+To verify the Symmetric Sieve Correlation (SSC) logic, navigate to the verifications_instructions folder and follow the steps in the README file located there.
+
 ### Digital Archive
 **DOI:** [10.5281/zenodo.20143543](https://doi.org/10.5281/zenodo.20143543)
 
@@ -32,20 +34,16 @@ The certificate serves as a functional witness to the following results:
 2. **Manifold Mapping:** Formal proof that the "Exact Sieve" acts as a volume-preserving flow ($\det(J)=1$).
 3. **Spectral Rigidity:** Certification of the invariants required for the Symplectic-Vaughan bound ($C_{SV} \approx 0.225$).
 
----
-
 ### **2) Repository Structure**
 
 | File / Folder | Purpose |
 | :--- | :--- |
-| **`RH_Proof/`** | **Primary Manuscript.** Includes `RH_Proof.pdf`, `.tex`, bibliography, and figures. |
+| **`RH_Proof/`** | **Primary Manuscript.** Includes `RH_Proof.tex`, bibliography, and figures. |
 | **`RH_Proof_Guide/`** | **Technical Guide.** Source and PDF for the manuscript guide. |
 | **`verification_code_instructions/`** | **Verification Hub.** Contains `Verification.pdf` and `Lean_Logic_Guide.pdf`. |
 | **`.../verification_code/`** | **The Engine Room.** Lean 4 project files (`sieve.lean`, `lakefile.lean`, etc.). |
 | **`LICENSE`** | Legal framework (MIT) for public use and citation. |
 | **`README.md`** | Project overview and architectural map for the 13-manifold formalization. |
-
----
 
 ### **3) The 13-Section Architecture**
 The verification is stratified into 13 distinct logical manifolds, providing a machine-certified mapping of the 13-dimensional configuration space ($\mathbb{T}^{13}$) derived in the manuscript:
@@ -64,8 +62,6 @@ The verification is stratified into 13 distinct logical manifolds, providing a m
 * **Section 12.0:** Spectral Manifold Final Verification.
 * **Section 13.0:** **The Constructive Seal** (Final Theorem of Consistency: $\pi(100) = 25$).
 
----
-
 ### **4) The 4 Pillars & Verification Epistemology**
 The logic is anchored by **Four Axiomatic Pillars** (Section 4.0), representing the theoretical bedrock:
 * **Pillar 1:** The Parity Bridge (Connecting loops to Nat identities).
@@ -74,8 +70,6 @@ The logic is anchored by **Four Axiomatic Pillars** (Section 4.0), representing 
 * **Pillar 4:** **Spectral Lower Bound (Prime sequence positivity).**
 
 **Methodological Note:** Rather than reproducing standard number theory proofs from scratch, this architecture utilizes Lean's `axiom` framework to embed universally accepted classical identities. The certificate focuses on **Vertical Verification**: proving that the novel Exact Sieve engine strictly obeys the geometric capacity limits and ergodic bounds presented in the manuscript.
-
----
 
 ### **5) How to Run**
 
@@ -91,8 +85,6 @@ The logic is anchored by **Four Axiomatic Pillars** (Section 4.0), representing 
 The source files for the paper are located in `RH_Proof/`.
 * Compile `RH_Proof.tex` using **pdfLaTeX** or **XeLaTeX**.
 * Ensure all `.png` figures and `sn-jnl.cls` are in the same directory during compilation.
-
----
 
 ### **6) Project Sync Map**
 This table maps the theoretical derivations in the manuscript to the formal manifolds in `verification_code/sieve.lean`.
