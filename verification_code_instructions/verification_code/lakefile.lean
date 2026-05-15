@@ -2,8 +2,9 @@ import Lake
 open Lake DSL
 
 package "goldbach" where
-  settings := #[
-    -- Add any specific compiler flags here
+  -- 'moreLeanArgs' replaces 'settings' for compiler flags
+  moreLeanArgs := #[
+    "-DautoImplicit=false" -- Recommended to ensure rigorous proof checking
   ]
 
 require mathlib from git
