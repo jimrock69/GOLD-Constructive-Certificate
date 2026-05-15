@@ -1,4 +1,4 @@
-/--
+/-
   AUTHOR: James Edwin Rock
   PROJECT: Constructive Certificate for the Goldbach Conjecture
   LANGUAGE: Lean 4
@@ -21,13 +21,13 @@ open Nat
 open BigOperators
 
 /-- 
-The Sieving Set Q: All odd primes q such that 2 < q ≤ √n[cite: 27].
+The Sieving Set Q: All odd primes q such that 2 < q ≤ √n.
 -/
 def sievingPrimes (n : ℕ) : Finset ℕ :=
   (Finset.range (sqrt n + 1)).filter (λ q => q > 2 ∧ Prime q)
 
 /-- 
-The Product Space P: Total combinations of coprime residues across the sieving set[cite: 27].
+The Product Space P: Total combinations of coprime residues across the sieving set.
 Formula: P = ∏_{q ∈ Q} (q - 1)
 -/
 def productSpace (n : ℕ) : ℕ :=
@@ -35,14 +35,14 @@ def productSpace (n : ℕ) : ℕ :=
 
 /-- 
 The Base Survival Count S: Count of symmetric residue classes surviving the dual 
-modular constraints r ≢ 0 (mod q) and r ≢ n (mod q)[cite: 35].
+modular constraints r ≢ 0 (mod q) and r ≢ n (mod q).
 Formula: S = ∏_{q ∈ Q} (q - 2)
 -/
 def baseSurvival (n : ℕ) : ℕ :=
   ∏ q in sievingPrimes n, (q - 2)
 
 /-- 
-Local Density Adjustment D(n): Accounts for increased capacity when q divides n[cite: 38].
+Local Density Adjustment D(n): Accounts for increased capacity when q divides n.
 Formula: D(n) = ∏_{q|n, q ∈ Q} (q - 1) / (q - 2)
 -/
 def localDensity (n : ℕ) : ℚ :=
@@ -50,21 +50,21 @@ def localDensity (n : ℕ) : ℚ :=
 
 /-- 
 The Structural Floor (N_min): The deterministic capacity of the modular grid 
-for available residue slots in the interval [0, n][cite: 38].
+for available residue slots in the interval [0, n].
 Formula: N_min = (n * D(n) * S) / P
 -/
 def structuralFloor (n : ℕ) : ℚ :=
   (n : ℚ) * localDensity n * (baseSurvival n : ℚ) / (productSpace n : ℚ)
 
 /-- 
-Definition of a symmetric sieve for a given even integer n[cite: 46].
+Definition of a symmetric sieve for a given even integer n.
 -/
 def SymmetricSieve (n : ℕ) (p : ℕ) : Prop :=
   Prime p ∧ Prime (n - p)
 
 /-- 
 The core theorem statement: For n ≥ 256, the structural floor and prime density 
-guarantee the existence of at least one Goldbach partition[cite: 63, 121].
+guarantee the existence of at least one Goldbach partition.
 -/
 theorem goldbach_existence_floor (n : ℕ) (h : n ≥ 256 ∧ Even n) : 
   ∃ p, SymmetricSieve n p := by
