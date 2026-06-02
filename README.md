@@ -6,7 +6,6 @@ For formal verification of the existence floor for even integers $n \ge 256$ and
 
 ### Digital Archive
 **DOI:** [Insert Zenodo DOI here]  
-*(Currently available via the Research Square "In Review" service for the Journal of Automated Reasoning)*
 
 ### Repository Structure
 * **Manuscripts:** Primary research documents in LaTeX and PDF format.
