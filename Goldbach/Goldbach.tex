@@ -1,4 +1,3 @@
-%\RequirePackage{fix-cm}
 \RequirePackage{silence}
 \WarningFilter{latex}{Command \showhyphens has changed}
 \documentclass[sn-mathphys-num, pdflatex]{sn-jnl}
@@ -9,7 +8,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
-
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
 % Configure the appearance of the code
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -36,8 +36,6 @@
     tabsize=2,
     columns=flexible
 }
-%\usepackage[T1]{fontenc}
-%\usepackage{lmodern} 
 \usepackage{array}
 \usepackage{booktabs}  
 \usepackage{float}  
@@ -49,14 +47,14 @@
 \newtheorem{lemma}{Lemma}   
 
 \begin{document}
-
 \title{Formalizing the Symmetric Sieve Correlation: \\ \large A Computational Certificate for Goldbach Existence Floors in Lean 4}
-
-\author*[1]{\fnm{James E.} \sur{Rock}}
-\email{jimrock69@comcast.net}
-\affil[1]{\orgname{Independent Researcher}, \orgaddress{\street{5689 Dartmouth Ct.}, \city{Ypsilanti}, \state{MI}, \postcode{48197}, \country{USA}}\\ \text{ORCID: 0000-0003-2858-6077}}
+\author{ \begin{center} 
+        James E. Rock \\
+Independent Researcher, Ypsilanti, MI \\
+jimrock69@comcast.net \end{center}}  
 
 \abstract{The Goldbach Conjecture asserts that every even integer $n > 2$ is the sum of two primes. This paper presents a self-contained proof based on the Symmetric Sieve Correlation (SSC), a rigorous framework that maps the distribution of prime pairs onto the modular architecture of the integers. We introduce a formal spectral derivation of the Symplectic-Vaughan Constant ($C_{SV} = 1/(\pi\sqrt{2}) \approx 0.225$) as a rigid geometric capacity limit that prevents the local degradation of sifting remainders. By defining the Structural Floor ($N_{min}$), we establish a deterministic lower bound on the number of symmetric residue classes available to potential prime pairs. While the density of primes decays logarithmically ($1/\ln n$), we demonstrate that the Structural Floor expands linearly. By subjecting the SSC to a computational stress test on powers of 2 (up to $n=32,768$), verified by a compiled Lean 4 computational certificate (\texttt{goldbach.lean}), we demonstrate that the search space diverges indefinitely, establishing that the existence of Goldbach floors is a rigid, structural necessity.}
+
 
 \keywords{Goldbach Conjecture, Symmetric Sieve Correlation (SSC), Symplectic-Vaughan Constant, Spectral Rigidity, Deterministic Sieve, Lean 4 formalization}
 \pacs[MSC Classification]{11P32; 11N35, 11N05, 42A16.}
@@ -140,7 +138,7 @@ Dirichlet established that for any modulus $d$ and any coprime residue $a$, the 
 \label{eq:dir}
 \pi(x; d, a) \sim \frac{1}{\phi(d)} \frac{x}{\ln x}
 \end{equation}
-This equation enforces a strict probabilistic neutrality. It dictates that the sieve process is blind to the specific geometric arrangement of the residue classes; it treats every coprime slot with equal weight. Within the SSC framework, the ``Goldbach-Permissible'' slots are simply a subset of these coprime residues. If the primes were to avoid these specific slots to cause a partition failure, it would require a violation of Eq.(\ref{eq:dir}); a ``clumping'' bias that contradicts the fundamental equidistribution of the prime numbers. 
+This equation enforces a strict probabilistic neutrality. It dictates that the sieve process is blind to the specific geometric arrangement of the residue classes; it treats every coprime slot with equal weight. Within the SSC framework, the ``Goldbach-Permissible'' slots are simply a subset of these coprime residues. If the primes were to avoid these specific slots to cause a partition failure, it would require a violation of Equation (\ref{eq:dir}); a ``clumping'' bias that contradicts the fundamental equidistribution of the prime numbers. 
 
 \section{Spectral Derivation of the Symplectic-Vaughan Constant}
 \label{sec:csv_derivation}
@@ -153,7 +151,7 @@ The error term of the prime distribution manifests arithmetically through the st
 \label{eq:leg}
 S(x, z) = \sum_{d \mid P(z)} \mu(d) \left\lfloor \frac{x}{d} \right\rfloor
 \end{equation}
-where $P(z) = \prod_{p \le z} p$. By substituting the fractional decomposition of the discrete floor function $\lfloor x/d \rfloor = x/d - \{x/d\}$ into Eq.(\ref{eq:leg}), the summation splits orthogonally into a continuous main density term and a discrete remainder term. Isolating these fractional variations yields the exact cumulative remainder function $E(x)$:
+where $P(z) = \prod_{p \le z} p$. By substituting the fractional decomposition of the discrete floor function $\lfloor x/d \rfloor = x/d - \{x/d\}$ into Equation (\ref{eq:leg}), the summation splits orthogonally into a continuous main density term and a discrete remainder term. Isolating these fractional variations yields the exact cumulative remainder function $E(x)$:
 \begin{equation}
 E(x) = -\sum_{d \mid P(z)} \mu(d) \left\{ \frac{x}{d} \right\}
 \end{equation}
@@ -353,26 +351,34 @@ conceptual blueprint into rigorous mathematical prose and optimizing the structu
 
 This manuscript is original work and is not under consideration for publication elsewhere. I received no funding and I have no conflicts of interest to disclose.
 \raggedright
-\begin{thebibliography}{8}
+\begin{thebibliography}{9}
 
-\bibitem{helfgott2013} Helfgott, H.A. ``The ternary Goldbach conjecture is true'', \textit{arXiv preprint arXiv:1312.7748}, 2013.
+\bibitem{chen1973}
+J. R. Chen, On the representation of a larger even integer as the sum of a prime and the product of at most two primes, \textit{Sci. Sinica} \textbf{16} (157--176), 1973.
 
-\bibitem{chen1973} Chen, J.R. ``On the representation of a larger even integer as the sum of a prime and the product of at most two primes'', \textit{Sci. Sinica}, 16, 157–176, 1973.
+\bibitem{dirichlet}
+P. G. L. Dirichlet, Beweis des Satzes, dass jede unbegrenzte arithmetische Progression..., \textit{Abh. Königl. Preuß. Akad. Wiss.}, 1837.
 
-\bibitem{hardy1923} Hardy G.H., Littlewood J.E. ``Some problems of 'Partitio numerorum'; III: On the expression of a number as a sum of primes'', \textit{Acta Mathematica}, 44, 1-70, 1923.
+\bibitem{gemini2025}
+Gemini (Google AI), \textit{Conversational Thought Partner and Mathematical Formalization Engine}, 2024--2026. \url{https://deepmind.google/technologies/gemini/}.
 
-\bibitem{dirichlet} Dirichlet, P.G.L. \textit{Beweis des Satzes, dass jede unbegrenzte arithmetische Progression...} [Proof of the theorem that every unbounded arithmetic progression...], Abh. Königl. Preuß. Akad. Wiss., 1837.
+\bibitem{hardy1923}
+G. H. Hardy and J. E. Littlewood, Some problems of 'Partitio numerorum'; III: On the expression of a number as a sum of primes, \textit{Acta Math.} \textbf{44} (1--70), 1923.
 
-\bibitem{stein2003fourier} Stein, E.M., Shakarchi, R. \textit{Fourier Analysis: An Introduction}, Princeton University Press, 2003. 
+\bibitem{helfgott2013}
+H. A. Helfgott, The ternary Goldbach conjecture is true, preprint, \textit{arXiv:1312.7748}, 2013.
 
-\bibitem{mcduff2017introduction} McDuff, D., Salamon, D. \textit{Introduction to Symplectic Topology}, Oxford University Press, 2017. 
+\bibitem{mcduff2017introduction}
+D. McDuff and D. Salamon, \textit{Introduction to Symplectic Topology}, Oxford University Press, Oxford, 2017.
 
-\bibitem{Rock2026Repository} Rock, J.E. \textit{The RH-Constructive-Certificate Repository: Formal Verification and Geometric Appendices}, Zenodo Archive \& GitHub, 2026. \url{https://github.com/jimrock69/RH-Constructive-Certificate}
+\bibitem{mertens}
+F. Mertens, Ein Beitrag zur analytischen Zahlentheorie, \textit{J. Reine Angew. Math.} \textbf{78} (46--62), 1874.
 
-\bibitem{mertens} Mertens, F. \textit{Ein Beitrag zur analytischen Zahlentheorie} [A contribution to analytic number theory], J. Reine Angew. Math., vol. 78, pp. 46-62, 1874.
+\bibitem{Rock2026Repository}
+J. E. Rock, The RH-Constructive-Certificate repository: formal verification and geometric appendices, Zenodo Archive \& GitHub, 2026. \url{https://github.com/jimrock69/RH-Constructive-Certificate}.
 
-\bibitem{gemini2025} Gemini (Google AI), \textit{Conversational Thought Partner and Mathematical Formalization Engine}, 2024--2026.
-\url{https://deepmind.google/technologies/gemini/}
+\bibitem{stein2003fourier}
+E. M. Stein and R. Shakarchi, \textit{Fourier Analysis: An Introduction}, Princeton University Press, Princeton, NJ, 2003.
 
 \end{thebibliography}
 
@@ -392,7 +398,7 @@ For the interval $n=256$, we assume the sieving set $Q = \{3, 5, 7, 11, 13\}$ (p
 
 \subsection{Structural Capacity}
 
-We apply the Structural Floor formula (Eq. \ref{eq:structural_floor}) to determine the total count of available residues:
+We apply the Structural Floor formula Equation (\ref{eq:structural_floor}) to determine the total count of available residues:
 \begin{equation}
 N_{min} = \frac{256 \cdot 1 \cdot 1485}{5,760} = \frac{380160}{5760} = 66
 \end{equation}
