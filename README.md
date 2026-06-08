@@ -44,7 +44,7 @@ The certificate serves as a functional witness to the following results:
 
 | File / Folder | Purpose |
 | :--- | :--- |
-| **`Manuscript/`** | **Primary Paper.** Includes LaTeX source and generated PDF. |
+| **`Goldbach/`** | **Primary Paper.** Includes LaTeX source and generated PDF. |
 | **`Goldbach.lean`** | **The Logic Engine.** Contains the formal definitions and existence axiom. |
 | **`lakefile.lean`** | **Project Manifest.** Configured with `preferReleaseBuild := true` for Windows stability. |
 | **`lake-manifest.json`** | **Dependency Lock.** Ensures bit-perfect replication of Mathlib v4.27.0. |
