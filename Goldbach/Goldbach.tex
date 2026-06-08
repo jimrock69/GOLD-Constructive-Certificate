@@ -212,7 +212,8 @@ When applied to the Symmetric Sieve Correlation (SSC) framework, this global rig
 For every even integer $n \ge 256$, let $S(n)$ be the count of available structural residue lanes. If the number of primes $\pi(n)$ in the sieved interval exceeds $S(n)/2$, then at least one Goldbach partition $(p, n-p)$ must exist by the Pigeonhole Principle.
 \end{theorem}
 
-The SSC identifies $S(n)$ available residue slots that are coprime to all $q \le \sqrt{n}$. These slots are inherently symmetric around the axis $n/2$, forming $k = S(n)/2$ pairs of the form $\{r, n-r\}$. To prove the existence of a Goldbach partition, we must show that at least one of these $k$ pairs contains two primes.
+The SSC identifies $S(n)$ available residue slots that are coprime to all $q \le \sqrt{n}$. These slots are inherently symmetric around the axis $n/2$, forming $k = S(n)/2$ pairs of the form $\{r, n-r\}$. To prove the existence of a Goldbach partition, we must show that at least one of these $k$ pairs contains two primes. For a Goldbach partition to fail, every symmetric residue pair $\{r, n-r\}$ would have to contain at least
+one composite number. As we shall see below, that is impossible.
 
 \subsection{The Density Corridor and the PHP Guarantee}
 \label{subsec:density_corridor}
