@@ -1,13 +1,11 @@
-\RequirePackage{silence}
-\WarningFilter{latex}{Command \showhyphens has changed}
 \documentclass[sn-mathphys-num, pdflatex]{sn-jnl}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{bookmark}
-\usepackage{microtype}
+\usepackage{mathtools}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{hyperref}
+
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs=true}
 % Configure the appearance of the code
@@ -44,22 +42,32 @@
 % --- THEOREM STYLES 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{lemma}{Lemma}   
+\theoremstyle{plain} % Native AMS parameter
+\theoremstyle{definition} % Adjusts fonts automatically for descriptions
+
 
 \begin{document}
-\title{Formalizing the Symmetric Sieve Correlation: \\ \large A Computational Certificate for Goldbach Existence Floors in Lean 4}
-\author{ \begin{center} 
-        James E. Rock \\
-Independent Researcher, Ypsilanti, MI \\
-jimrock69@comcast.net \end{center}}  
 
-\abstract{The Goldbach Conjecture asserts that every even integer $n > 2$ is the sum of two primes. This paper presents a self-contained proof based on the Symmetric Sieve Correlation (SSC), a rigorous framework that maps the distribution of prime pairs onto the modular architecture of the integers. We introduce a formal spectral derivation of the Symplectic-Vaughan Constant ($C_{SV} = 1/(\pi\sqrt{2}) \approx 0.225$) as a rigid geometric capacity limit that prevents the local degradation of sifting remainders. By defining the Structural Floor ($N_{min}$), we establish a deterministic lower bound on the number of symmetric residue classes available to potential prime pairs. While the density of primes decays logarithmically ($1/\ln n$), we demonstrate that the Structural Floor expands linearly. By subjecting the SSC to a computational stress test on powers of 2 (up to $n=32,768$), verified by a compiled Lean 4 computational certificate (\texttt{goldbach.lean}), we demonstrate that the search space diverges indefinitely, establishing that the existence of Goldbach floors is a rigid, structural necessity.}
+\title{Formalizing the Symmetric Sieve Correlation: \\ \Large A Computational Certificate for Goldbach Existence Pairs in Lean 4}
 
+\author{
+  \begin{tabular}{c}
+    \textbf{James E. Rock} \\
+    \small Independent Researcher, Ypsilanti, MI, USA \\
+    \small ORCID: 0000-0003-2858-6077 \\
+    \small Email: \texttt{jimrock69@comcast.net}
+  \end{tabular}
+}
 
-\keywords{Goldbach Conjecture, Symmetric Sieve Correlation (SSC), Symplectic-Vaughan Constant, Spectral Rigidity, Deterministic Sieve, Lean 4 formalization}
-\pacs[MSC Classification]{11P32; 11N35, 11N05, 42A16.}
-
+\date{}
+% Leaves this empty so the journal doesn't inject a default current date
 \maketitle
+\begin{abstract}
+{}The Goldbach Conjecture asserts that every even integer $n > 2$ is the sum of two primes. This paper presents a self-contained proof based on the Symmetric Sieve Correlation (SSC), a rigorous framework that maps the distribution of prime pairs onto the modular architecture of the integers. We introduce a formal spectral derivation of the Symplectic-Vaughan Constant ($C_{SV} = 1/(\pi\sqrt{2}) \approx 0.225$) as a rigid geometric capacity limit that prevents the local degradation of sifting remainders. By defining the Structural Floor ($N_{min}$), we establish a deterministic lower bound on the number of symmetric residue classes available to potential prime pairs. While the density of primes decays logarithmically ($1/\ln n$), we demonstrate that the Structural Floor expands linearly. By subjecting the SSC to a computational stress test on powers of 2 (up to $n=32,768$), verified by a compiled Lean 4 computational certificate (\texttt{goldbach.lean}), we demonstrate that the search space diverges indefinitely, establishing that the existence of Goldbach floors is a rigid, structural necessity.
+\end{abstract}
+
+\noindent \textbf{Keywords:} Goldbach Conjecture, Symmetric Sieve Correlation (SSC), Symplectic-Vaughan Constant, Spectral Rigidity, Deterministic Sieve, Lean 4 formalization. \\
+\noindent \textbf{2020 Mathematics Subject Classification:} 11P32, 11N35, 11N05, 42A16.
 
 \section{Introduction}
 \label{sec:intro}
@@ -73,8 +81,7 @@ The complete framework supporting this manuscript is fully formalized and open-s
 \begin{itemize}
     \item \textbf{Repository URL:} \url{https://github.com/jimrock69/GOLD-Constructive-Certificate}
     \item \textbf{Software Environment:} Lean v4.27.0 Kernel configuration.
-\end{itemize}    
-
+\end{itemize}
 \section{The Symmetric Sieve Correlation (SSC)} 
 \label{sec:ssc}
 
