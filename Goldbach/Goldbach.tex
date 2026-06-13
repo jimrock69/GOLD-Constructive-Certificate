@@ -58,8 +58,6 @@
 % The page number this paper will start at.
 \startsAtpage{1}
 
-
-
 \begin{document}
 
 \title{Formalizing the Symmetric Sieve Correlation: \\ \Large A Computational Certificate for Goldbach Existence Pairs in Lean 4}
@@ -96,7 +94,7 @@ The complete framework supporting this manuscript is fully formalized and open-s
 \section{The Symmetric Sieve Correlation (SSC)} 
 \label{sec:ssc}
 
-The SSC Algorithm provides the deterministic methodology for calculating the count of available residues within a modular framework. A comprehensive worked example of this calculation for $n=256$ is provided in the Supplement section.
+The SSC Algorithm provides the deterministic methodology for calculating the count of available residues within a modular framework. A comprehensive worked example of this calculation for $n=256$ is provided in the Supplement section along with a comprehensive discussion addressing potential analytic objections to assist the reader in reconciling the deterministic capacity constraints of the Symmetric Sieve Correlation with traditional probabilistic heuristics.
 
 \subsection{The Sieving Set and Product Space}
 \label{subsec:sieving_set}
@@ -349,7 +347,7 @@ This paper has shown that the solution lies not in refining the probability, but
     
     \item \textbf{The Inflection Point:} Empirical verification in the Supplement section confirms that for all $n > 256$, the modular signal overcomes local boundary noise. Beyond this threshold, the system possesses a positive and diverging ``Safety Margin.''
     
-    \item \textbf{The Density Guarantee:} As derived in Section 5.1, the local density of primes within the sieved structure ($\rho \approx 0.74 \to 0.89$) remains strictly above the $0.5$ threshold required by the Pigeonhole Principle.
+    \item \textbf{The Density Guarantee:} As derived in Section 4.1, the local density of primes within the sieved structure ($\rho \approx 0.74 \to 0.89$) remains strictly above the $0.5$ threshold required by the Pigeonhole Principle.
     
     \item \textbf{Structural Divergence:} The number of available symmetric residue pairs ($N_{min}$) provided by the modular grid diverges linearly as $n \to \infty$, providing a widening window of opportunity for existence.
     
@@ -373,7 +371,7 @@ Symmetric Sieve Correlation (SSC) Algorithm originated with the author. The AI (
 
 \noindent \textbf{Ethical Approval and Participant Consent:} Not Applicable. 
 
-\noindent \textbf{Availability of data and materials:} Not applicable.
+\noindent \textbf{Availability of data and materials:} The algorithmic framework was validated via a C++ program. The complete source code implementation is reproduced in the Supplement.
 
 \begin{thebibliography}{99}
 {
