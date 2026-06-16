@@ -13,7 +13,7 @@ For formal verification of the existence floor for even integers $n \ge 256$ and
 * **Build Artifacts:** Project manifest and dependency locks for reproducibility.
 
 ### Citation
-Rock, J. E. (2026). *Formal Verification of the Goldbach Conjecture via Symmetric Sieve Correlation (v1.1). Zenodo*. 
+Rock, J. E. (2026). *Formal Verification of the Goldbach Conjecture via Symmetric Sieve Correlation (v1.0.1). Zenodo*. 
 [GitHub Repository. [URL]](https://doi.org/10.5281/zenodo.20683322### 1) Opening Summary TECHNICAL NOTE: SUPPLEMENTAL MATERIAL (LEAN 4 CERTIFICATE))
 
 ---
