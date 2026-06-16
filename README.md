@@ -5,7 +5,7 @@ This repository provides a machine-certified proof object developed in the **Lea
 For formal verification of the existence floor for even integers $n \ge 256$ and the modular architecture of the sieve, follow the verification instructions provided in this README and the associated source files.
 
 ### Digital Archive
-**DOI:** [Insert Zenodo DOI here]  
+**DOI:** 10.5281/zenodo.20683322  
 
 ### Repository Structure
 * **Manuscripts:** Primary research documents in LaTeX and PDF format.
