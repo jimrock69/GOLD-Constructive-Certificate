@@ -69,7 +69,7 @@ The complete framework supporting this manuscript is fully formalized and open-s
 \section{The Symmetric Sieve Correlation (SSC)} 
 \label{sec:ssc}
 
-The SSC Algorithm provides the deterministic methodology for calculating the count of available residues within a modular framework. A comprehensive worked example of this calculation for $n=256$ is provided in the Supplement section along with a comprehensive discussion addressing potential analytic objections to assist the reader in reconciling the deterministic capacity constraints of the Symmetric Sieve Correlation with traditional probabilistic heuristics.
+The SSC Algorithm provides the deterministic methodology for calculating the count of available residues within a modular framework. A comprehensive worked example of this calculation for $n=256$ is provided in \ref{subsec:quadratic_parity} along with a comprehensive discussion addressing potential analytic objections in \ref{sec:refuted_objections} to assist the reader in reconciling the deterministic capacity constraints of the Symmetric Sieve Correlation with traditional probabilistic heuristics.
 
 \subsection{The Sieving Set and Product Space}
 \label{subsec:sieving_set}
@@ -272,7 +272,7 @@ When applied to the \textbf{Hardy-Littlewood asymptotic formula} \cite{hardy1923
 G(n) \sim 2 \Pi_2 C(n) \frac{n}{(\ln n)^2}
 \end{equation}
 
-where $\Pi_2 \approx 0.66016$ is the Twin Prime Constant. For powers of 2 (where $C(n)=1$), the count rests on the lowest structural band, corresponding exactly to the SSC floor derived in Section 3 and secured by the $C_{SV}$ variance envelope derived in Section 4.
+where $\Pi_2 \approx 0.66016$ is the Twin Prime Constant. For powers of 2 (where $C(n)=1$), the count rests on the lowest structural band, corresponding exactly to the SSC floor and secured by the $C_{SV}$ variance envelope derived in \ref{sec:determinism_certainty}.
 
 \section{Numerical Verification and Density Adjustment}
 \label{sec:verification}
@@ -354,7 +354,7 @@ This paper has shown that the solution lies not in refining the probability, but
 \begin{enumerate}
     \item \textbf{The Existence Floor:} The number of structural residue pairs scales linearly with $n$, creating a search space ($N_{min}$) that grows significantly faster than the logarithmic decay of prime density.
     
-    \item \textbf{The Inflection Point:} Empirical verification in the Supplement section confirms that for all $n > 256$, the modular signal overcomes local boundary noise. Beyond this threshold, the system possesses a positive and diverging ``Safety Margin.''
+    \item \textbf{The Inflection Point:} Empirical verification in the Table \ref{table:scaling_data} confirms that for all $n > 256$, the modular signal overcomes local boundary noise. Beyond this threshold, the system possesses a positive and diverging ``Safety Margin.''
     
     \item \textbf{The Density Guarantee:} As derived in Section 4.1, as $n$ increases, the local density of primes within the sieved structure continues to rise from ($\rho \approx 0.74 \to 0.89$) assuring a continuous supply of Goldbach pairs.
     
